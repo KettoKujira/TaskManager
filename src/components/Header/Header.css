@@ -1,0 +1,53 @@
+.header {
+  display: grid;
+  grid-area: header;
+  grid-template-areas: "header_title header_button header_date";
+  grid-template-columns: 196px 1fr 1fr;
+  border-bottom: 2px solid #fff;
+}
+
+.header_title {
+  grid-area: header_title;
+  margin: 0;
+  padding: 22px 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ede6f2;
+}
+
+.header_button {
+  grid-area: header_button;
+  margin: 17px 22px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: #01BAEF;
+  width: 120px;
+  height: 34px;
+  border-radius: 6px;
+}
+
+.button_text {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #413f54;
+}
+
+.header_date {
+  padding: 22px 20px;
+  text-transform: uppercase;
+  display: inline-block;
+  grid-area: header_date;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ede6f2;
+}
+
+.header_date--color {
+  color: #01baef;
+}

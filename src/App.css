@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #413F54;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./Fonts/Inter-Regular.woff") format("woff");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./Fonts/Inter-Bold.woff") format("woff");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.app-wrapper {
+  margin: 0 auto;
+  max-width: 1024px;
+  display: grid;
+  grid-template-areas: 
+  'header'
+  'main';
+}
