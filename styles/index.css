@@ -3,6 +3,59 @@
 @import url('../vendor/normalize.css');
 
 .root {
-  font-family: var(--font-inter);
   background-color: var(--dark);
+}
+
+.header {
+  border-bottom: 2px solid var(--light);
+}
+
+.header__container {
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 22px 20px;
+  max-width: 1024px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.header__title {
+  margin: 0;
+  font-family: var(--font-inter);
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--light);
+  text-transform: uppercase;
+}
+
+.header__button {
+  font-family: var(--font-inter);
+  border: none;
+  border-radius: 5px;
+  background-color: var(--blue);
+  margin-left: 42px;
+  padding: 8px 7px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--dark);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.header__date {
+  margin: 0;
+  margin-left: auto;
+  font-family: var(--font-inter);
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--light);
+  text-transform: uppercase;
+}
+
+.header__date-highlight {
+  color: var(--blue);
 }
