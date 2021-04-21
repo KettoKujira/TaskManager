@@ -94,8 +94,7 @@
 }
 
 .main__header {
-  margin: 0;
-  margin-bottom: 30px;
+  margin: 0 0 30px;
   font-family: var(--font-inter);
   color: var(--light);
   font-weight: bold;
@@ -110,7 +109,7 @@
 .tasks {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  grid-auto-rows: 270px;
+  grid-auto-rows: minmax(270px, auto);
   grid-gap: 40px;
   margin-left: 0;
   padding: 0;
@@ -142,6 +141,9 @@
   font-weight: bold;
   font-size: 18px;
   line-height: 22px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .task__content {
@@ -149,6 +151,9 @@
   font-family: var(--font-inter);
   font-size: 14px;
   line-height: 17px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 148px;
 }
 
 .task__delete-button {
