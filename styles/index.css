@@ -103,6 +103,10 @@
 }
 
 .tasks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: minmax(280px, auto);
+  grid-gap: 40px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -114,7 +118,6 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
 }
 
 .task__date {
@@ -146,7 +149,8 @@
 }
 
 .task__delete-button {
-  margin-left:auto;
+  margin-top: auto;
+  margin-left: auto;
   display: block;
   width: 16px;
   height: 18px;
