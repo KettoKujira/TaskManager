@@ -1,0 +1,10 @@
+/* Расскажи немного про этот псевдокласс. Он имеет отношение к блоку root? */
+:root {
+  /* Зачем в примере здесь Verdana? */
+  --font-inter: Inter, sans-serif;
+  --blue: #01baef;
+  --green: #1a936f;
+  --red: #a41623;
+  --light: #ede6f2;
+  --dark: #413f54;
+}
