@@ -1,6 +1,6 @@
-import Header from "../components/layout/Header/Header";
-import Main from "../components/layout/Main/Main";
-import TasksList from "../components/TasksList/TasksList";
+import Header from "../../components/layout/Header/Header";
+import Main from "../../components/layout/Main/Main";
+import TasksList from "../../components/TasksList/TasksList";
 
 import mainPageProps from "./MainPage.props";
 

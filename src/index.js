@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import MainPage from "./pages/MainPage";
+import MainPage from "./pages/MainPage/MainPage";
 import "./assets/styles/index.css";
 
 const TASKS = [
