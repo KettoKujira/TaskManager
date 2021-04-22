@@ -1,4 +1,4 @@
-import taskProp from "../../props/task.prop";
+import taskProps from "./Task.props";
 import "./Task.css";
 
 const Task = (props) => {
@@ -14,8 +14,6 @@ const Task = (props) => {
   );
 };
 
-Task.propTypes = {
-  task: taskProp.isRequired,
-};
+Task.propTypes = taskProps;
 
 export default Task;
