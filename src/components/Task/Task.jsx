@@ -1,5 +1,4 @@
-import PropTypes from "prop-types";
-
+import taskProp from "../../props/task.prop";
 import "./Task.css";
 
 const Task = (props) => {
@@ -16,12 +15,7 @@ const Task = (props) => {
 };
 
 Task.propTypes = {
-  task: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    date: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
-  }).isRequired,
+  task: taskProp.isRequired,
 };
 
 export default Task;
