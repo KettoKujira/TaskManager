@@ -1,3 +1,4 @@
+import propTypes from "./Main.props";
 import "./Main.css";
 
 const Main = (props) => {
@@ -8,5 +9,7 @@ const Main = (props) => {
     </main>
   );
 };
+
+Main.propTypes = propTypes;
 
 export default Main;
