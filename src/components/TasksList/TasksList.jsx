@@ -1,6 +1,6 @@
 import Task from "../Task/Task";
 import "./TasksList.css";
-import tasksListProps from "./TasksList.props";
+import propTypes from "./TasksList.props";
 
 const TasksList = (props) => {
   const { tasks } = props;
@@ -14,6 +14,6 @@ const TasksList = (props) => {
   );
 };
 
-TasksList.propTypes = tasksListProps;
+TasksList.propTypes = propTypes;
 
 export default TasksList;
