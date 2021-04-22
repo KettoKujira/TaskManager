@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import "./Task.css";
 
 const Task = (props) => {
@@ -11,6 +13,15 @@ const Task = (props) => {
       <button className="task__delete-button button" />
     </li>
   );
+};
+
+Task.propTypes = {
+  task: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    date: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Task;
