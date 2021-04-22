@@ -102,14 +102,17 @@
   color: var(--light);
 }
 
-.tasks {
+.main__tasks {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-auto-rows: minmax(280px, auto);
   grid-gap: 40px;
-  margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.tasks {
+  margin-left: 0;
 }
 
 .task {
