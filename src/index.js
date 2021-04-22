@@ -11,6 +11,24 @@ const TASKS = [
     title: "Hello",
     content: "Today is awesome day!",
   },
+  {
+    id: 2,
+    date: "20 april 2021",
+    title: "Hello world",
+    content: "Today is awesome day!",
+  },
+  {
+    id: 3,
+    date: "21 april 2021",
+    title: "Hello world wassup",
+    content: "Today is awesome day!",
+  },
+  {
+    id: 4,
+    date: "22 april 2021",
+    title: "Hello Hello world wassup maaan",
+    content: "Today is awesome day!",
+  },
 ];
 
 ReactDOM.render(
