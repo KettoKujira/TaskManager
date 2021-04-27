@@ -1,17 +1,17 @@
-import "./Header.css"
+import "./Header.css";
 
 const Header = () => {
   return (
-    <header class="root__header header">
-      <div class="header__container">
-        <h1 class="header__title">Taskmanager</h1>
-        <button class="header__button button">
-          New task<span class="header__button-icon"></span>
+    <header className="root__header header">
+      <div className="header__container">
+        <h1 className="header__title">Taskmanager</h1>
+        <button className="header__button button">
+          New task
+          <span className="header__button-icon" />
         </button>
-        <span class="header__date">
-          Today&nbsp;is{" "}
-          <span class="header__date-color">19&nbsp;april 2021</span>
-        </span>
+        <h2 className="header__date">
+          Today is <span className="header__date-highlight">19 april 2021</span>
+        </h2>
       </div>
     </header>
   );
