@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import MainPage from "./pages/MainPage/MainPage";
+import App from "./components/App/App";
 import "./assets/styles/index.css";
 
 const TASKS = [
@@ -33,7 +33,7 @@ const TASKS = [
 
 ReactDOM.render(
   <React.StrictMode>
-    <MainPage tasks={TASKS} />
+    <App tasks={TASKS} />
   </React.StrictMode>,
   document.getElementById("root")
 );
