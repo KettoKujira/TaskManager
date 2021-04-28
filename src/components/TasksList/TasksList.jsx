@@ -1,4 +1,4 @@
-import tasksListProps from "./TaskList.props";
+import propTypes from "./TaskList.props";
 import Task from "../Task/Task";
 import "./TasksList.css";
 
@@ -14,6 +14,6 @@ const TasksList = (props) => {
   );
 };
 
-TasksList.propTypes = tasksListProps;
+TasksList.propTypes = propTypes;
 
 export default TasksList;

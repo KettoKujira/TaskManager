@@ -1,7 +1,7 @@
 import Header from "../../components/layout/Header/Header";
 import Main from "../../components/layout/Main/Main";
 import TasksList from "../../components/TasksList/TasksList";
-import mainPageProps from "./MainPage.props";
+import propTypes from "./MainPage.props";
 
 const MainPage = (props) => {
   const {tasks} = props;
@@ -16,6 +16,6 @@ const MainPage = (props) => {
   );
 };
 
-MainPage.propTypes = mainPageProps;
+MainPage.propTypes = propTypes;
 
 export default MainPage;
