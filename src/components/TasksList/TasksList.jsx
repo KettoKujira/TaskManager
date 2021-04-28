@@ -1,27 +1,25 @@
+import tasksListProps from "./TaskList.props";
 import Task from "../Task/Task";
 import "./TasksList.css";
 
-const TASK = {
-  id:1,
-  date: "22 april",
-  title: "Hello World",
-  content: "Today is awesome day!"
-};
+const TasksList = (props) => {
+  const {tasks} = props;
 
-const TasksList = () => {
   return (
     <ul className="main__tasks tasks">
-      <Task task={TASK}/>
-      <Task task={TASK}/>
-      <Task task={TASK}/>
-      <Task task={TASK}/>
-      <Task task={TASK}/>
-      <Task task={TASK}/>
-      <Task task={TASK}/>
-      <Task task={TASK}/>
-      <Task task={TASK}/>
+      <Task task={tasks[0]} />
+      <Task task={tasks[0]} />
+      <Task task={tasks[0]} />
+      <Task task={tasks[0]} />
+      <Task task={tasks[0]} />
+      <Task task={tasks[0]} />
+      <Task task={tasks[0]} />
+      <Task task={tasks[0]} />
+      <Task task={tasks[0]} />
     </ul>
   );
 };
+
+TasksList.propTypes = tasksListProps;
 
 export default TasksList;
