@@ -1,56 +1,25 @@
+import Task from "../Task/Task";
 import "./TasksList.css";
+
+const TASK = {
+  id:1,
+  date: "22 april",
+  title: "Hello World",
+  content: "Today is awesome day!"
+};
 
 const TasksList = () => {
   return (
     <ul className="main__tasks tasks">
-      <li className="tasks__item task">
-        <p className="task__date">19 april 2021</p>
-        <h3 className="task__title">Learn to code</h3>
-        <p className="task__content">Today I will learn how to manage state.</p>
-        <button className="task__delete-button button" />
-      </li>
-      <li className="tasks__item task">
-        <p className="task__date">19 april 2021</p>
-        <h3 className="task__title">Learn to code</h3>
-        <p className="task__content">Today I will learn how to manage state.</p>
-        <button className="task__delete-button button" />
-      </li>
-      <li className="tasks__item task">
-        <p className="task__date">19 april 2021</p>
-        <h3 className="task__title">Learn to code</h3>
-        <p className="task__content">Today I will learn how to manage state.</p>
-        <button className="task__delete-button button" />
-      </li>
-      <li className="tasks__item task">
-        <p className="task__date">19 april 2021</p>
-        <h3 className="task__title">Learn to code</h3>
-        <p className="task__content">Today I will learn how to manage state.</p>
-        <button className="task__delete-button button" />
-      </li>
-      <li className="tasks__item task">
-        <p className="task__date">19 april 2021</p>
-        <h3 className="task__title">Learn to code</h3>
-        <p className="task__content">Today I will learn how to manage state.</p>
-        <button className="task__delete-button button" />
-      </li>
-      <li className="tasks__item task">
-        <p className="task__date">19 april 2021</p>
-        <h3 className="task__title">Learn to code</h3>
-        <p className="task__content">Today I will learn how to manage state.</p>
-        <button className="task__delete-button button" />
-      </li>
-      <li className="tasks__item task">
-        <p className="task__date">19 april 2021</p>
-        <h3 className="task__title">Learn to code</h3>
-        <p className="task__content">Today I will learn how to manage state.</p>
-        <button className="task__delete-button button" />
-      </li>
-      <li className="tasks__item task">
-        <p className="task__date">19 april 2021</p>
-        <h3 className="task__title">Learn to code</h3>
-        <p className="task__content">Today I will learn how to manage state.</p>
-        <button className="task__delete-button button" />
-      </li>
+      <Task task={TASK}/>
+      <Task task={TASK}/>
+      <Task task={TASK}/>
+      <Task task={TASK}/>
+      <Task task={TASK}/>
+      <Task task={TASK}/>
+      <Task task={TASK}/>
+      <Task task={TASK}/>
+      <Task task={TASK}/>
     </ul>
   );
 };
