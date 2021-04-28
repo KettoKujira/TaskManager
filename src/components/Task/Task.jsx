@@ -1,4 +1,4 @@
-import taskProp from "../../../props/task.prop";
+import taskProp from "../../props/task.prop";
 import "./Task.css";
 
 const Task = (props) => {

@@ -45,6 +45,6 @@
   border: none;
   width: 16px;
   height: 18px;
-  background: url('../../../assets/img/icon-delete.svg');
+  background: url('../../assets/img/icon-delete.svg');
   background-size: cover;
 }
