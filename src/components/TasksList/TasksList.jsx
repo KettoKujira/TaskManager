@@ -3,7 +3,7 @@ import Task from "../Task/Task";
 import "./TasksList.css";
 
 const TasksList = (props) => {
-  const {tasks} = props;
+  const { tasks } = props;
 
   return (
     <ul className="main__tasks tasks">

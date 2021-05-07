@@ -6,6 +6,10 @@
   background-color: var(--dark);
 }
 
+.root_new-task {
+  margin: 30px auto 0;
+}
+
 .root__main {
   margin: 30px auto 0;
 }

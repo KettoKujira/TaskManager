@@ -1,7 +1,7 @@
 .tasks {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  grid-auto-rows: minmax(270px, auto);
+  grid-auto-rows: minmax(280px, auto);
   grid-gap: 40px;
   margin-left: 0;
   padding: 0;
