@@ -19,7 +19,7 @@ const NewTask = (props) => {
   };
 
   const submitHandler = (event) => {
-    event.preventDefault();
+    event.preventDefault(); //вернуться к этому в курсе
 
     const taskData = {
       title: enteredTitle,
@@ -28,7 +28,8 @@ const NewTask = (props) => {
     };
 
     props.onSaveTaskData(taskData);
-    setEnteredDate("");
+    
+    setEnteredDate(""); //вернуться к этому в курсе
     setEnteredTitle("");
     setEnteredContent("");
   };
