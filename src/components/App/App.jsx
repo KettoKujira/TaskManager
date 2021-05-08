@@ -36,9 +36,21 @@ const App = () => {
     setTasks((prevTasks) => {
       return [task, ...prevTasks];
     });
+    console.log(task);
   };
 
-  return <MainPage tasks={tasks} onAddTaks={addTaskHandler} />;
+  const deleteTaskHandler = (task) => {
+    setTasks(tasks.filter(item => item !== task));
+    console.log(task);
+  };
+
+  return (
+    <MainPage
+      tasks={tasks}
+      onAddTask={addTaskHandler}
+      onDeleteTask={deleteTaskHandler}
+    />
+  );
 };
 
 App.propTypes = propTypes;

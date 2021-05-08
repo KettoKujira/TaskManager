@@ -1,14 +1,12 @@
 import propTypes from "./TaskList.props";
 import Task from "../Task/Task";
 import "./TasksList.css";
-import React, { useState } from "react";
 
 const TasksList = (props) => {
-  const [tasks, setTasks] = useState(props.tasks);
+  const { tasks } = props;
 
   const DeleteTaskHandler = (task) => {
-    setTasks(tasks.filter(item => item !== task));
-    console.log(task);
+    props.upToMainDeletedTask(task);
   };
 
   return (
