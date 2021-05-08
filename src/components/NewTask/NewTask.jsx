@@ -41,18 +41,21 @@ const NewTask = (props) => {
           type="date"
           min="2019-01-01"
           max="2022-12-31"
+          value={enteredDate}
           onChange={dateChangeHandler}
         />
         <input
           className="form__title"
           type="text"
           placeholder="Title"
+          value={enteredTitle}
           onChange={titleChangeHandler}
         />
         <input
           className="form__content"
           type="text"
           placeholder="Content"
+          value={enteredContent}
           onChange={contentChangeHandler}
         />
         <button className="form__add-button button" type="submit">
