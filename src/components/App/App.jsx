@@ -36,12 +36,10 @@ const App = () => {
     setTasks((prevTasks) => {
       return [task, ...prevTasks];
     });
-    console.log(task);
   };
 
   const deleteTaskHandler = (task) => {
-    setTasks(tasks.filter(item => item !== task));
-    console.log(task);
+    setTasks(tasks.filter((item) => item !== task));
   };
 
   return (

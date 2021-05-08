@@ -27,11 +27,17 @@ const NewTask = (props) => {
       date: new Date(enteredDate),
     };
 
-    props.onSaveTaskData(taskData);
-    
-    setEnteredDate(""); //вернуться к этому в курсе
-    setEnteredTitle("");
-    setEnteredContent("");
+    if (
+      taskData.title !== "" &&
+      taskData.content !== "" &&
+      taskData.date instanceof Date && !isNaN(taskData.date)
+    ) {
+      props.onSaveTaskData(taskData);
+      setEnteredDate(""); //вернуться к этому в курсе
+      setEnteredTitle("");
+      setEnteredContent("");
+      console.log(taskData.date instanceof Date);
+    } else alert("Заполните все поля!");
   };
 
   return (
