@@ -7,10 +7,18 @@ import propTypes from "./MainPage.props";
 const MainPage = (props) => {
   const {tasks} = props;
 
+  const saveTaskDataHandler = (enteredTaskData) => {
+    const taskData = {
+      ...enteredTaskData,
+      id: Math.random()
+    }
+    props.onAddTaks(taskData);
+  };
+
   return (
     <>
       <Header />
-      <NewTask />
+      <NewTask onSaveTaskData={saveTaskDataHandler} />
       <Main>
         <TasksList tasks={tasks}/>
       </Main>
