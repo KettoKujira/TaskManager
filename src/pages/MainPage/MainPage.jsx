@@ -1,11 +1,12 @@
 import Header from "../../components/layout/Header/Header";
 import Main from "../../components/layout/Main/Main";
-import TasksList from "../../components/TasksList/TasksList";
 import NewTask from "../../components/NewTask/NewTask";
 import propTypes from "./MainPage.props";
+import React, { useState } from "react";
 
 const MainPage = (props) => {
   const { tasks } = props;
+  const [state, setstate] = useState();
 
   const saveTaskDataHandler = (enteredTaskData) => {
     const taskData = {
@@ -19,10 +20,20 @@ const MainPage = (props) => {
     props.onDeleteTask(task);
   };
 
+  const SwitchHandler = (Switch) => {
+    setstate(Switch)
+  };
+
+  let NewTaskContent = <></>;
+
+  if (state === true) {
+    NewTaskContent = <NewTask onSaveTaskData={saveTaskDataHandler} />
+  };
+
   return (
     <>
-      <Header />
-      <NewTask onSaveTaskData={saveTaskDataHandler} />
+      <Header onSwitch={SwitchHandler} />
+      {NewTaskContent}
       <Main tasks={tasks} upToMainPageDeletedTask={mainPageDeletedTask} />
     </>
   );
