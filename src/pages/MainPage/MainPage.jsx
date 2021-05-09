@@ -33,8 +33,7 @@ const MainPage = (props) => {
   return (
     <>
       <Header onSwitch={SwitchHandler} />
-      {NewTaskContent}
-      <Main tasks={tasks} upToMainPageDeletedTask={mainPageDeletedTask} />
+      <Main tasks={tasks} NewTaskContent={NewTaskContent} upToMainPageDeletedTask={mainPageDeletedTask} />
     </>
   );
 };
