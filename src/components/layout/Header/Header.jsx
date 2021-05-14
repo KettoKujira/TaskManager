@@ -1,11 +1,12 @@
 import "./Header.css";
 import React, { useState } from "react";
+import OurDate from "../../OurDate/OurDate";
 
 const Header = (props) => {
   const [Switch, setSwitch] = useState(false);
 
   const clickHandler = () => {
-    setSwitch((Switch) => Switch === false ? (Switch = true) : false);
+    setSwitch((Switch) => (Switch === false ? (Switch = true) : false));
   };
 
   props.onSwitch(Switch);
@@ -19,7 +20,10 @@ const Header = (props) => {
           <span className="header__button-icon" />
         </button>
         <h2 className="header__date">
-          Today is <span className="header__date-highlight">19 april 2021</span>
+          Today is{" "}
+          <span className="header__date-highlight">
+            <OurDate date={new Date()} />
+          </span>
         </h2>
       </div>
     </header>

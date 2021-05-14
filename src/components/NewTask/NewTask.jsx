@@ -30,7 +30,8 @@ const NewTask = (props) => {
     if (
       taskData.title !== "" &&
       taskData.content !== "" &&
-      taskData.date instanceof Date && !isNaN(taskData.date)
+      taskData.date instanceof Date &&
+      !isNaN(taskData.date)
     ) {
       props.onSaveTaskData(taskData);
       setEnteredDate(""); //вернуться к этому в курсе
