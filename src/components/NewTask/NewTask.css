@@ -15,6 +15,10 @@
   flex-direction: column;
 }
 
+.invalid {
+  box-shadow: 0px 0px 20px 0px var(--red);
+}
+
 input {
   border: none;
   background-color: var(--light);
