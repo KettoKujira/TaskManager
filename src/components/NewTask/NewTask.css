@@ -1,8 +1,3 @@
-.new-task {
-  padding: 0 50px;
-  box-sizing: border-box;
-}
-
 .form {
   box-sizing: border-box;
   background-color: var(--light);
