@@ -1,7 +1,6 @@
 import Header from "../../components/layout/Header/Header";
 import Main from "../../components/layout/Main/Main";
 import NewTask from "../../components/NewTask/NewTask";
-import propTypes from "./MainPage.props";
 import React, { useState } from "react";
 
 const MainPage = (props) => {
@@ -37,7 +36,5 @@ const MainPage = (props) => {
     </>
   );
 };
-
-MainPage.propTypes = propTypes;
 
 export default MainPage;

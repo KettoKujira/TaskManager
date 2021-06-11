@@ -1,4 +1,3 @@
-import propTypes from "./Main.props";
 import "./Main.css";
 import TasksList from "../../TasksList/TasksList";
 
@@ -18,7 +17,5 @@ const Main = (props) => {
     </main>
   );
 };
-
-Main.propTypes = propTypes;
 
 export default Main;

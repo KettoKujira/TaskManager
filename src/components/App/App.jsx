@@ -1,5 +1,4 @@
 import MainPage from "../../pages/MainPage/MainPage";
-import propTypes from "./App.props";
 import React, { useState } from "react";
 
 const TASKS = [
@@ -50,7 +49,4 @@ const App = () => {
     />
   );
 };
-
-App.propTypes = propTypes;
-
 export default App;

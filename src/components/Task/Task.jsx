@@ -1,4 +1,3 @@
-import propTypes from "../../props/task.prop";
 import OurDate from "../OurDate/OurDate";
 import "./Task.css";
 
@@ -23,7 +22,5 @@ const Task = (props) => {
     </li>
   );
 };
-
-Task.propTypes = propTypes;
 
 export default Task;
