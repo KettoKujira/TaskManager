@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 const MainPage = (props) => {
   const { tasks } = props;
-  const [state, setstate] = useState();
+  const [isVisible, setIsVisible] = useState();
 
   const saveTaskDataHandler = (enteredTaskData) => {
     const taskData = {
@@ -20,12 +20,12 @@ const MainPage = (props) => {
   };
 
   const SwitchHandler = (Switch) => {
-    setstate(Switch)
+    setIsVisible(Switch)
   };
 
   let NewTaskContent = <></>;
 
-  if (state === true) {
+  if (isVisible === true) {
     NewTaskContent = <NewTask onSaveTaskData={saveTaskDataHandler} />
   };
 

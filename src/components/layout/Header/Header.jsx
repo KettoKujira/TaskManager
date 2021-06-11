@@ -6,7 +6,7 @@ const Header = (props) => {
   const [Switch, setSwitch] = useState(false);
 
   const clickHandler = () => {
-    setSwitch((Switch) => (Switch === false ? (Switch = true) : false));
+    setSwitch((Switch) => !Switch);
   };
 
   props.onSwitch(Switch);
