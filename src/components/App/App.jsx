@@ -1,7 +1,13 @@
-import MainPage from "../../pages/MainPage/MainPage";
+import Header from "../layout/Header/Header";
+import Main from "../layout/Main/Main";
 
 const App = () => {
-  return <MainPage />;
+  return (
+    <>
+      <Header />
+      <Main />
+    </>
+  );;
 };
 
 export default App;
