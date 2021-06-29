@@ -1,40 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./NewTask.css";
 
 const NewTask = (props) => {
-  const [enteredDate, setEnteredDate] = useState("");
-  const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredContent, setEnteredContent] = useState("");
   const [isValid, setIsValid] = useState(true);
 
-  const dateChangeHandler = (event) => {
-    if (event.target.value.trim().length > 0) {
-      setIsValid(true);
-    }
-    setEnteredDate(event.target.value);
-  };
-
-  const titleChangeHandler = (event) => {
-    if (event.target.value.trim().length > 0) {
-      setIsValid(true);
-    }
-    setEnteredTitle(event.target.value);
-  };
-
-  const contentChangeHandler = (event) => {
-    if (event.target.value.trim().length > 0) {
-      setIsValid(true);
-    }
-    setEnteredContent(event.target.value);
-  };
+  const enteredDate = useRef();
+  const enteredTitle = useRef();
+  const enteredContent = useRef();
 
   const submitHandler = (event) => {
     event.preventDefault();
-
     const taskData = {
-      title: enteredTitle,
-      content: enteredContent,
-      date: new Date(enteredDate),
+      title: enteredTitle.current.value,
+      content: enteredContent.current.value,
+      date: new Date(enteredDate.current.value),
     };
 
     if (
@@ -44,9 +23,6 @@ const NewTask = (props) => {
       !isNaN(taskData.date)
     ) {
       props.onSaveTaskData(taskData);
-      setEnteredDate("");
-      setEnteredTitle("");
-      setEnteredContent("");
     } else setIsValid(false);
   };
 
@@ -61,22 +37,19 @@ const NewTask = (props) => {
           type="date"
           min="2019-01-01"
           max="2022-12-31"
-          value={enteredDate}
-          onChange={dateChangeHandler}
+          ref={enteredDate}
         />
         <input
           className="form__title"
           type="text"
           placeholder="Title"
-          value={enteredTitle}
-          onChange={titleChangeHandler}
+          ref={enteredTitle}
         />
         <input
           className="form__content"
           type="text"
           placeholder="Content"
-          value={enteredContent}
-          onChange={contentChangeHandler}
+          ref={enteredContent}
         />
         <button className="form__add-button button" type="submit">
           Add task
