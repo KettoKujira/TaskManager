@@ -1,19 +1,26 @@
-import "./Main.css";
+import { useState } from "react";
+
 import TasksList from "../../TasksList/TasksList";
 
-const Main = (props) => {
-  const { tasks } = props;
-  const { NewTaskContent } = props;
+import "./Main.css";
 
-  const mainDeletedTask = (task) => {
-    props.upToMainPageDeletedTask(task);
+const Main = () => {
+  const [Switch, setSwitch] = useState(false);
+
+  const ClickHandler = () => {
+    setSwitch((Switch) => !Switch);
   };
 
   return (
     <main className="root__main main">
-      <h2 className="main__header">What's up today?</h2>
-      { NewTaskContent }
-      <TasksList tasks={tasks} upToMainDeletedTask={mainDeletedTask} />
+      <div className="main__header-container">
+        <h2 className="main__header">What's up today?</h2>
+        <button className="header__button button" onClick={ClickHandler}>
+          New task
+          <span className="header__button-icon" />
+        </button>
+      </div>
+      <TasksList Switch={Switch} ClickHandler={ClickHandler} />
     </main>
   );
 };

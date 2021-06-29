@@ -47,7 +47,6 @@ const NewTask = (props) => {
       setEnteredDate("");
       setEnteredTitle("");
       setEnteredContent("");
-      console.log(taskData.date instanceof Date);
     } else setIsValid(false);
   };
 

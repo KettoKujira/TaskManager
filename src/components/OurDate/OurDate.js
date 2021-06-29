@@ -1,5 +1,3 @@
-import React from "react";
-
 const OurDate = (props) => {
   const { date } = props;
   const month = date.toLocaleString("en-US", { month: "long" });

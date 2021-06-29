@@ -1,11 +1,18 @@
 .main {
   max-width: 1024px;
-  padding: 0 50px;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
-.main__header {
+.main__header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 0 0 30px;
+}
+
+.main__header {
+  margin: 0;
   font-family: var(--font-inter);
   color: var(--light);
   font-weight: bold;
