@@ -8,6 +8,16 @@
   height: 100vh;
   z-index: 10;
   background-color: var(--dark);
+  animation: containerAway 4000ms linear both;
+}
+
+@keyframes containerAway {
+  80% {
+    background-color: var(--dark);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
 }
 
 .title {
@@ -24,7 +34,7 @@
   font-family: "PT Mono", monospace;
   width: 12ch;
   animation: typing 1.5s steps(12), blink 0.5s step-end infinite alternate,
-    away 4000ms linear both;
+    textAway 4000ms linear both;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
@@ -43,11 +53,11 @@
   }
 }
 
-@keyframes away {
+@keyframes textAway {
   75% {
     color: #8eb691;
   }
   100% {
-    color: transparent;
+    color: rgba(0, 0, 0, 0);
   }
 }
