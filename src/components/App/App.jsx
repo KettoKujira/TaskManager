@@ -5,18 +5,19 @@ import Header from "../layout/Header/Header";
 import Main from "../layout/Main/Main";
 
 const App = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState();
 
   const Visible = () => {
-    setIsVisible(false);
+    setIsVisible(true);
+    setTimeout(()=>{setIsVisible((isVisible) => !isVisible)}, 4000);
   };
 
-  setTimeout(Visible, 4000);
+  useEffect(Visible, []);
 
   return (
     <>
-      {isVisible ? <Greeting /> : ''}
-      <Header />
+      {isVisible ? <Greeting /> : ""}
+      <Header Visible={Visible} />
       <Main />
     </>
   );
