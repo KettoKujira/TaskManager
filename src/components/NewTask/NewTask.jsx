@@ -51,7 +51,7 @@ const NewTask = (props) => {
           placeholder="Content"
           ref={enteredContent}
         />
-        <button className="form__add-button button" type="submit">
+        <button className="form__add-button button" type="submit" on>
           Add task
         </button>
       </form>
