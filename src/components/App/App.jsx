@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <>
-      {isVisible ? <Greeting /> : ""}
+      {isVisible && <Greeting />}
       <Header Visible={Visible} />
       <Main />
     </>
