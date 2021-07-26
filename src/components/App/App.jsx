@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
+// import { useState, useEffect } from "react";
 
 import Greeting from "../Greeting/Greeting";
 import Header from "../layout/Header/Header";
@@ -12,7 +13,7 @@ const App = () => {
     setTimeout(()=>{setIsVisible((isVisible) => !isVisible)}, 4000);
   };
 
-  useEffect(Visible, []);
+  // useEffect(Visible, []);
 
   return (
     <>

@@ -22,7 +22,7 @@ const NewTask = (props) => {
       taskData.date instanceof Date &&
       !isNaN(taskData.date)
     ) {
-      props.onSaveTaskData(taskData);
+      props.onAddTask(taskData);
     } else setIsValid(false);
   };
 

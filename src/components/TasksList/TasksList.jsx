@@ -1,64 +1,77 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 import Task from "../Task/Task";
 import NewTask from "../NewTask/NewTask";
 
 import "./TasksList.css";
 
-const TASKS = [
-  {
-    id: 1,
-    date: new Date(2021, 3, 22),
-    title: "Hello World",
-    content: "Today is awesome day!",
-  },
-  {
-    id: 2,
-    date: new Date(2020, 4, 21),
-    title: "Hi World",
-    content: "Today is a great night!",
-  },
-  {
-    id: 3,
-    date: new Date(2019, 5, 20),
-    title: "Bye World",
-    content: "Today is big evening!",
-  },
-  {
-    id: 4,
-    date: new Date(2018, 6, 19),
-    title: "Goodbye World",
-    content: "Today is good morning!",
-  },
-];
-
 const TasksList = (props) => {
-  const [tasks, setTasks] = useState(TASKS);
+  //const [tasks, setTasks] = useState(TASKS);
+  const [tasks, setTasks] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const deleteTaskHandler = (task) => {
     setTasks(tasks.filter((item) => item !== task));
   };
+  
+  const fetchTaskHandler = useCallback(async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await fetch("https://taskmanager-ef021-default-rtdb.europe-west1.firebasedatabase.app/tasks.json");
+      if (!response.ok) {
+        throw new Error('Something went wrong');
+      }
+      const data = await response.json();
 
-  const saveTaskDataHandler = (enteredTaskData) => {
-    const taskData = {
-      ...enteredTaskData,
-      id: Math.random(),
-    };
-    setTasks((prevTasks) => {
-      return [taskData, ...prevTasks];
-    });
+      const loadedTasks = [];
+
+      for (const key in data) {
+        loadedTasks.push({
+          id: key,
+          title: data[key].title,
+          date: new Date(data[key].date),
+          content: data[key].content
+        });
+      }
+      setTasks(loadedTasks);
+    } catch (error) {
+      setError(error.message);
+    }
+    setIsLoading(false);
+  }, [])
+
+  useEffect(() => {
+    fetchTaskHandler();
+  }, [fetchTaskHandler]);
+
+  async function addTaskHandler(enteredTaskData) {
+    await fetch(
+      "https://taskmanager-ef021-default-rtdb.europe-west1.firebasedatabase.app/tasks.json",
+      {
+        method: "POST",
+        body: JSON.stringify(enteredTaskData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     props.ClickHandler(props.Switch);
-  };
+  }
+
+
 
   let NewTaskContent = <></>;
 
   if (props.Switch === true) {
-    NewTaskContent = <NewTask onSaveTaskData={saveTaskDataHandler} />;
+    NewTaskContent = <NewTask onAddTask={addTaskHandler} />;
   }
 
   return (
     <ul className="main__tasks tasks">
       {NewTaskContent}
+      {/* {props.Switch ? <NewTask onAddTask={addTaskHandler} /> : ''} */}
       {tasks.map((task) => (
         <Task key={task.id} task={task} onDeleteTask={deleteTaskHandler} />
       ))}
