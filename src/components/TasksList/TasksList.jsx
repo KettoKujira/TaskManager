@@ -6,7 +6,6 @@ import NewTask from "../NewTask/NewTask";
 import "./TasksList.css";
 
 const TasksList = (props) => {
-  //const [tasks, setTasks] = useState(TASKS);
   const [tasks, setTasks] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -60,18 +59,9 @@ const TasksList = (props) => {
     props.ClickHandler(props.Switch);
   }
 
-
-
-  let NewTaskContent = <></>;
-
-  if (props.Switch === true) {
-    NewTaskContent = <NewTask onAddTask={addTaskHandler} />;
-  }
-
   return (
     <ul className="main__tasks tasks">
-      {NewTaskContent}
-      {/* {props.Switch ? <NewTask onAddTask={addTaskHandler} /> : ''} */}
+      {props.Switch ? <NewTask onAddTask={addTaskHandler} /> : ''}
       {tasks.map((task) => (
         <Task key={task.id} task={task} onDeleteTask={deleteTaskHandler} />
       ))}
